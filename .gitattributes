@@ -1,0 +1,27 @@
+* text=auto
+
+*.meta -text merge=unityyamlmerge diff
+*.unity -text merge=unityyamlmerge diff
+*.asset -text merge=unityyamlmerge diff
+*.prefab -text merge=unityyamlmerge diff
+*.mat -text merge=unityyamlmerge diff
+*.anim -text merge=unityyamlmerge diff
+*.controller -text merge=unityyamlmerge diff
+*.physicMaterial -text merge=unityyamlmerge diff
+*.playable -text merge=unityyamlmerge diff
+*.mask -text merge=unityyamlmerge diff
+*.fontsettings -text merge=unityyamlmerge diff
+*.guiskin -text merge=unityyamlmerge diff
+*.renderTexture -text merge=unityyamlmerge diff
+*.spriteatlas -text merge=unityyamlmerge diff
+*.mixer -text merge=unityyamlmerge diff
+*.shadervariants -text merge=unityyamlmerge diff
+
+*.dll -text
+*.pdb -text
+*.png -text
+*.jpg -text
+*.ttf -text
+*.otf -text
+*.zip -text
+*.unitypackage -text

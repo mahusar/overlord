@@ -1,0 +1,65 @@
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]serSettings/
+
+.vs/
+.vscode/
+.idea/
+.gradle/
+
+ExportedObj/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+sysinfo.txt
+crashlytics-build.properties
+*.log
+
+*.apk
+*.aab
+*.unitypackage
+
+# Unity rewrites this whenever a package resolves, and it records the
+# com.coplaydev.unity-mcp git dependency. Regenerable, so it is not tracked.
+/Packages/packages-lock.json
+
+# overlordd build output
+/src/**/bin/
+/src/**/obj/
+!/src/**/*.csproj
+!/src/**/*.sln
+
+# published binaries
+/build/
+
+# --- publish branch only ---------------------------------------------------
+# Third party content a consumer installs themselves, and the bundled Tor
+# binary. These are stripped from the snapshot by tools/sync-publish.sh; the
+# rules below stop them reappearing as untracked noise.
+/[Aa]ssets/TextMesh Pro/
+/[Aa]ssets/TextMesh Pro.meta
+/[Aa]ssets/StreamingAssets/
+/[Aa]ssets/StreamingAssets.meta
+/tools/
