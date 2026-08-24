@@ -1,0 +1,28 @@
+[Unit]
+Description=Overlord hub, read only Stealth chain data over Tor
+Documentation=https://github.com/mahusar/overlord
+After=network-online.target tor.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=overlord
+Group=overlord
+WorkingDirectory=/opt/overlordhub
+EnvironmentFile=/etc/overlordhub.env
+ExecStart=/opt/overlordhub/overlordhub serve
+Restart=on-failure
+RestartSec=10
+
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+MemoryDenyWriteExecute=false
+
+[Install]
+WantedBy=multi-user.target
