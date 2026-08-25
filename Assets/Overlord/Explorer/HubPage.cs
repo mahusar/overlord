@@ -95,7 +95,7 @@ namespace Overlord.Explorer
 
             sourceInk = SourceText.color;
 
-            UIPrefab.Bind<TextMeshProUGUI>(Root, "Header/Title").text = ExplorerUI.Lockup;
+            UIPrefab.Bind<TextMeshProUGUI>(Root, "Header/Title").text = ExplorerUI.Name;
             UIPrefab.Bind<TextMeshProUGUI>(Root, "Version").text =
                 ExplorerUI.Name + " " + Hub.Version;
         }

@@ -24,7 +24,6 @@ namespace Overlord.Explorer
         public Button ConnectButton;
         public Button LocalButton;
         public Button DisconnectButton;
-        public Button HubButton;
         public TextMeshProUGUI TorLine;
         public TextMeshProUGUI StatusLine;
         public Image TorBar;
@@ -53,7 +52,6 @@ namespace Overlord.Explorer
             ConnectButton = UIPrefab.Bind<Button>(Root, "Connect/ConnectButton");
             LocalButton = UIPrefab.Bind<Button>(Root, "Connect/LocalButton");
             DisconnectButton = UIPrefab.Bind<Button>(Root, "Connect/DisconnectButton");
-            HubButton = UIPrefab.Bind<Button>(Root, "Connect/HubButton");
             TorBar = UIPrefab.Bind<Image>(Root, "Connect/TorTrack/TorBar");
             TorLine = UIPrefab.Bind<TextMeshProUGUI>(Root, "Connect/TorLine");
             StatusLine = UIPrefab.Bind<TextMeshProUGUI>(Root, "Status");
@@ -96,7 +94,6 @@ namespace Overlord.Explorer
         {
             ConnectButton.gameObject.SetActive(!connected);
             LocalButton.gameObject.SetActive(!connected);
-            HubButton.gameObject.SetActive(!connected);
             DisconnectButton.gameObject.SetActive(connected);
             Onion.interactable = !connected;
         }

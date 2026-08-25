@@ -7,9 +7,7 @@ namespace Overlord.Explorer
 {
     public class ExplorerUI
     {
-        public const string Product = "StealthHub";
         public const string Name = "Overlord";
-        public const string Lockup = Product + " - " + Name;
 
         public const string Prefab = "ExplorerCanvas";
         public const string HeadingPrefab = "ExplorerHeading";

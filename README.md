@@ -1,17 +1,17 @@
-# StealthHub - Overlord
+# Overlord
 
 A Tor-native chain service for Stealth (XST). An operator runs a hub beside a
 Stealth daemon and it answers read-only chain queries over a hidden service. A
 client asks several hubs at once and compares what they say, so it can browse the
 chain without running a daemon of its own.
 
-**StealthHub** is the desktop application. **A hub** is the service an operator
-runs. **Overlord** is the project both are built in.
+**Overlord** is the desktop application. **A hub** is the service an operator
+runs.
 
 | Build | Runs where | Does |
 |---|---|---|
 | `overlordhub` | Linux, headless, beside a daemon | answers read-only chain queries; can be announced on chain by a separate command |
-| StealthHub | desktop, Tor bundled | finds hubs, holds several at once, explorer, stats and the board |
+| Overlord | desktop, Tor bundled | finds hubs, holds several at once, explorer, stats and the board |
 
 One codebase. The hub half is `Assets/Overlord/Core`, which touches no Unity API
 and builds as `netstandard2.0`, so the headless host is a plain console project

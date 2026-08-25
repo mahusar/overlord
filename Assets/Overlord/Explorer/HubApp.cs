@@ -80,7 +80,6 @@ namespace Overlord.Explorer
             menu.ConnectButton.onClick.AddListener(OnConnect);
             menu.LocalButton.onClick.AddListener(OnLocal);
             menu.DisconnectButton.onClick.AddListener(OnDisconnect);
-            menu.HubButton.onClick.AddListener(OnRunHub);
             menu.SetConnected(false);
 
             menu.AddTile("Board", "News, market, community and tools need no hub.",
