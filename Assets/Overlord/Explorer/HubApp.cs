@@ -31,6 +31,7 @@ namespace Overlord.Explorer
         [SerializeField] private float tickIntervalSeconds = 2f;
         [SerializeField] private float stakersIntervalSeconds = 5f;
 
+        private WindowChrome chrome;
         private MenuUI menu;
         private HubPage page;
         private HubOperator operatorScreen;
@@ -74,6 +75,12 @@ namespace Overlord.Explorer
                 Debug.LogError("[hub] " + query + " threw " + problem.GetType().Name + ": " +
                     problem.Message + Environment.NewLine + problem.StackTrace);
             };
+
+            WindowFrame.Apply();
+
+            chrome = new WindowChrome(transform);
+            chrome.MinimizeButton.onClick.AddListener(WindowFrame.Minimize);
+            chrome.QuitButton.onClick.AddListener(WindowFrame.Quit);
 
             menu = new MenuUI(transform);
             menu.Onion.text = TorConfig.GetSavedOnionAddress();
@@ -1182,16 +1189,15 @@ namespace Overlord.Explorer
             dragons.AddHeading("how it fits together");
             dragons.AddRow("client", "Unity, all traffic over Tor");
             dragons.AddRow("server", "Dragonator, headless");
-            dragons.AddRow("add-ons", "Registry, Witness, Bots, Bet and Swapper, drop-in DLLs");
+            dragons.AddRow("add-ons", "Registry, Witness, Bots and Bet, drop-in DLLs");
             dragons.AddRow("daemon", "every add-on but Bots wants one beside the server");
 
             dragons.AddSpace(12f);
             dragons.AddHeading("what the chain carries");
             dragons.AddRow("Registry", "the public server list, so one server finds you the rest");
             dragons.AddRow("Witness", "a 40 byte anchor per batch of matches, a hash and never a match");
-            dragons.AddRow("Bet", "bets, payouts and refunds in XST");
-            dragons.AddRow("Swapper", "players topping up XST with Monero");
             dragons.AddRow("Bots", "nothing on chain, but a bot signs its own match receipts");
+            dragons.AddRow("Bet", "bets, payouts and refunds in XST");
             dragons.AddNote(
                 "An add-on is a file the operator drops in. A server without them still plays, it " +
                 "just offers none of this.", ExplorerUI.Muted);
@@ -1210,7 +1216,7 @@ namespace Overlord.Explorer
             dragons.AddHeading("repositories");
             dragons.AddLink("StealthDragons", "https://github.com/mahusar/StealthDragons", "the game");
             dragons.AddLink("Dragonator add-ons", "https://github.com/mahusar/dragonator-addons",
-                "Registry, Witness, Bots, Bet, Swapper");
+                "Registry, Witness, Bots, Bet");
 
             dragons.SetStatus("Read only. Nothing here launches a game yet.", ExplorerUI.Muted);
         }
